@@ -103,7 +103,7 @@ export default function SpiritualMessages() {
                           }}
                         >
                           <p className="text-gray-300 leading-relaxed italic">
-                            "{verse.content}"
+                            &ldquo;{verse.content}&rdquo;
                           </p>
                           <p className="text-yellow-400 text-sm mt-3 font-medium">
                             - {verse.reference}
@@ -114,7 +114,7 @@ export default function SpiritualMessages() {
                   ) : (
                     <div className="p-6 bg-black rounded-lg border-l-4 border-yellow-400 transform transition-all duration-300 hover:bg-gray-900 hover:scale-[1.02]">
                       <p className="text-gray-300 leading-relaxed italic">
-                        "{message.content}"
+                        &ldquo;{message.content}&rdquo;
                       </p>
                       <p className="text-yellow-400 text-sm mt-3 font-medium">
                         - {message.verse}

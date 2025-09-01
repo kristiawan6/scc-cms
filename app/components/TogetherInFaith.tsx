@@ -1,5 +1,5 @@
 'use client';
-import { Calendar, Heart, Users, ArrowRight, Sparkles } from 'lucide-react';
+import { Calendar, Heart, Users } from 'lucide-react';
 
 export default function TogetherInFaith() {
   const events = [
@@ -46,7 +46,6 @@ export default function TogetherInFaith() {
         {/* Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
           {events.map((event, index) => {
-            const IconComponent = event.icon;
             const isHighlighted = event.title === "Worship Night" || event.title === "GIC" || event.title === "COOL";
             return (
               <div 

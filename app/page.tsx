@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+
 import Navigation from "./components/Navigation";
 import { useState, useEffect } from "react";
 import Hero from "./components/Hero";

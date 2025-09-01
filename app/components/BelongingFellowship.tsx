@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 
 export default function BelongingFellowship() {
   // Fellowship photos with actual images
@@ -58,9 +59,11 @@ export default function BelongingFellowship() {
               >
                 <div className="relative w-72 h-48 rounded-lg overflow-hidden shadow-lg transform transition-all duration-300 group-hover:scale-105">
                   {/* Image */}
-                  <img 
+                  <Image 
                     src={image.src} 
                     alt={image.alt}
+                    width={288}
+                    height={192}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   

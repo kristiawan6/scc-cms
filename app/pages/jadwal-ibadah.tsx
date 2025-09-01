@@ -110,7 +110,7 @@ export default function JadwalIbadahPage() {
               </div>
               <div className="mt-6 pt-6 border-t border-gray-700">
                 <p className="text-gray-400 italic">
-                  "Marilah kita datang ke hadirat-Nya dengan nyanyian syukur, dan bersorak-sorai kepada-Nya dengan nyanyian pujian!"
+                  &ldquo;Marilah kita datang ke hadirat-Nya dengan nyanyian syukur, dan bersorak-sorai kepada-Nya dengan nyanyian pujian!&rdquo;
                 </p>
                 <p className="text-sm text-gray-500 mt-2">- Mazmur 95:2</p>
               </div>

@@ -115,7 +115,7 @@ export default function KomunitasPage() {
                     </div>
                   </div>
                   <blockquote className="text-gray-300 text-center text-lg italic leading-relaxed border-l-4 border-yellow-400 pl-6">
-                    "Bertumbuh bersama dalam kasih Kristus melalui mentoring yang terarah dan penuh kasih"
+                    &ldquo;Bertumbuh bersama dalam kasih Kristus melalui mentoring yang terarah dan penuh kasih&rdquo;
                   </blockquote>
                 </div>
               </div>
@@ -125,9 +125,9 @@ export default function KomunitasPage() {
           {/* Community Gallery */}
           <div className="mb-16">
             <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-yellow-400 mb-4">Galeri Komunitas</h3>
+              <h3 className="text-2xl font-bold text-yellow-400 mb-4">Our Best Moments</h3>
               <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-                Momen-momen berharga dalam perjalanan iman bersama komunitas
+                Precious moments in the journey of faith
               </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">

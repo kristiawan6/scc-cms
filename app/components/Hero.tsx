@@ -7,9 +7,8 @@ export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   
-  const texts = ['your heart', 'your life', 'your family'];
-  
   useEffect(() => {
+    const texts = ['your heart', 'your life', 'your family'];
     const typeSpeed = isDeleting ? 50 : 100;
     const currentFullText = texts[currentIndex];
     
@@ -31,7 +30,7 @@ export default function Hero() {
     }, typeSpeed);
     
     return () => clearTimeout(timeout);
-  }, [currentText, currentIndex, isDeleting, texts]);
+  }, [currentText, currentIndex, isDeleting]);
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Video Background */}
