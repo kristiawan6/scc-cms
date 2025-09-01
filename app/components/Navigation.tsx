@@ -73,6 +73,9 @@ export default function Navigation() {
       {isMenuOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black border-t border-gray-800">
+            <Link href="/" className="text-gray-300 hover:text-white block px-3 py-2 text-base font-medium">
+              Home
+            </Link>
             <Link href="/tentang" className="text-gray-300 hover:text-white block px-3 py-2 text-base font-medium">
               Tentang
             </Link>
@@ -82,9 +85,6 @@ export default function Navigation() {
             <Link href="/komunitas" className="text-gray-300 hover:text-white block px-3 py-2 text-base font-medium">
               Komunitas
             </Link>
-            <a href="#" className="text-gray-300 hover:text-white block px-3 py-2 text-base font-medium">
-              Kontak
-            </a>
           </div>
         </div>
       )}
