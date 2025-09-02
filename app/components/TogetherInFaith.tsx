@@ -26,11 +26,11 @@ export default function TogetherInFaith() {
   ];
 
   return (
-    <section className="relative py-24 bg-gradient-to-b from-gray-900 to-black">
+    <section className="relative py-24 bg-gradient-to-b from-gray-900 to-black" id="community-events" aria-labelledby="community-heading">
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">          
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 leading-tight">
+        <header className="text-center mb-16">
+          <h2 id="community-heading" className="text-4xl sm:text-5xl font-bold text-white mb-6 leading-tight">
             Together In Faith,{' '}
             <span className="text-yellow-400">
               Rooted In Love
@@ -41,7 +41,7 @@ export default function TogetherInFaith() {
             Join our community where faith flourishes through meaningful connections, 
             worship, and spiritual growth together.
           </p>
-        </div>
+        </header>
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">

@@ -1,5 +1,4 @@
 'use client';
-
 import { useState, useEffect } from 'react';
 
 export default function Hero() {
@@ -33,23 +32,23 @@ export default function Hero() {
   }, [currentText, currentIndex, isDeleting]);
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Video Background */}
-    <video
-      className="absolute inset-0 w-full h-full object-cover z-0"
-      autoPlay
-      muted
-      loop
-      playsInline
-    >
-      <source src="https://res.cloudinary.com/da8szcqqk/video/upload/v1755942369/scc-hero_d7sfo0.mp4" type="video/mp4" />
-    </video>
+      {/* Optimized Video Background with Poster */}
+      <video
+         className="absolute inset-0 w-full h-full object-cover z-0"
+         autoPlay
+         muted
+         loop
+         playsInline
+       >
+         <source src="https://res.cloudinary.com/da8szcqqk/video/upload/v1755942369/scc-hero_d7sfo0.mp4" type="video/mp4" />
+      </video>
       
       {/* Background overlay */}
       <div className="absolute inset-0 bg-opacity-50"></div>
       
       {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 leading-[0.9] tracking-tight">
+         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 leading-[0.9] tracking-tight" style={{fontFamily: 'Helvetica, Arial, sans-serif'}}>
           <span className="text-white font-black" style={{textShadow: '4px 4px 8px rgba(0,0,0,0.8), 2px 2px 4px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.7)'}}>
             See what God
           </span>

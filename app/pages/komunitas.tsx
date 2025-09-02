@@ -21,9 +21,18 @@ export default function KomunitasPage() {
           {/* COOL Section */}
           <div className="mb-16">
             <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/60 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 shadow-2xl">
-              <div className="flex items-center mb-8">
-                <div className="w-3 h-8 bg-gradient-to-b from-yellow-400 to-orange-500 rounded-full mr-4"></div>
-                <h2 className="text-3xl font-bold text-yellow-400">COOL</h2>
+              <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center">
+                  <div className="w-3 h-8 bg-gradient-to-b from-yellow-400 to-orange-500 rounded-full mr-4"></div>
+                  <h2 className="text-3xl font-bold text-yellow-400">COOL</h2>
+                </div>
+                <div className="bg-white rounded-lg p-2">
+                  <img 
+                    src="https://res.cloudinary.com/da8szcqqk/image/upload/v1756800788/Logo_Cool_qnm6l3.png" 
+                    alt="COOL Logo" 
+                    className="h-12 w-auto object-contain"
+                  />
+                </div>
               </div>
               <p className="text-gray-300 mb-8 text-lg">COmmunity Of Love</p>
               
@@ -31,23 +40,31 @@ export default function KomunitasPage() {
                 {/* Cool Dewasa */}
                 <div className="bg-gray-800/40 rounded-xl p-6 hover:bg-gray-800/60 transition-all duration-300">
                   <h3 className="text-xl font-semibold text-white mb-4">Cool Dewasa</h3>
-                  <div className="w-full h-40 bg-gradient-to-br from-gray-700/50 to-gray-600/50 rounded-lg mb-6 flex items-center justify-center border border-gray-600/30">
-                    <span className="text-gray-300 text-lg font-medium">Cool Dewasa</span>
+                  <div className="w-full h-64 rounded-lg mb-6 overflow-hidden">
+                    <img 
+                      src="https://res.cloudinary.com/da8szcqqk/image/upload/v1756800647/WhatsApp_Image_2025-09-02_at_15.03.22_jsljde.jpg" 
+                      alt="Cool Dewasa" 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <p className="text-gray-300 leading-relaxed">
+                  {/* <p className="text-gray-300 leading-relaxed">
                     Komunitas untuk dewasa yang ingin bertumbuh dalam iman dan persekutuan yang mendalam
-                  </p>
+                  </p> */}
                 </div>
 
                 {/* Cool Dewasa Muda */}
                 <div className="bg-gray-800/40 rounded-xl p-6 hover:bg-gray-800/60 transition-all duration-300">
                   <h3 className="text-xl font-semibold text-white mb-4">Cool Dewasa Muda (Youth)</h3>
-                  <div className="w-full h-40 bg-gradient-to-br from-gray-700/50 to-gray-600/50 rounded-lg mb-6 flex items-center justify-center border border-gray-600/30">
-                    <span className="text-gray-300 text-lg font-medium">Cool Youth</span>
+                  <div className="w-full h-64 rounded-lg mb-6 overflow-hidden">
+                    <img 
+                      src="https://res.cloudinary.com/da8szcqqk/image/upload/v1756798756/WhatsApp_Image_2025-04-25_at_18.31.43_vnzdmh.jpg" 
+                      alt="Cool Dewasa Muda (Youth)" 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <p className="text-gray-300 leading-relaxed">
+                  {/* <p className="text-gray-300 leading-relaxed">
                     Komunitas khusus untuk pemuda yang dinamis, penuh semangat, dan siap menghadapi tantangan hidup
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>
@@ -61,59 +78,85 @@ export default function KomunitasPage() {
                 <h2 className="text-3xl font-bold text-yellow-400">MENTORING</h2>
               </div>
               
-              <div className="grid lg:grid-cols-2 gap-12">
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-2xl font-bold text-white mb-4">Growth In Christ</h3>
-                    <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                      Program mentoring yang dirancang untuk membantu setiap individu bertumbuh dalam kedewasaan rohani dan karakter Kristus.
-                    </p>
+              <div className="space-y-8">
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-4">Growth In Christ</h3>
+                </div>
+                {/* Mobile/Tablet Image - Shows below title on small screens */}
+                <div className="lg:hidden">
+                  <div className="w-full aspect-video bg-gradient-to-br from-gray-700/50 to-gray-600/50 rounded-xl overflow-hidden border border-gray-600/30">
+                    <img 
+                      src="https://res.cloudinary.com/da8szcqqk/image/upload/v1756798841/Welcome_Sign_Presentation_xjayxq.jpg" 
+                      alt="Growth In Christ Mentoring Program" 
+                      className="w-full h-full object-cover object-center"
+                    />
                   </div>
-                  
-                  <div className="space-y-4">
-                    <div className="flex items-center py-3 px-4 rounded-lg hover:bg-gray-800/30 transition-colors">
-                      <div className="w-2 h-2 bg-orange-400 rounded-full mr-4 flex-shrink-0"></div>
-                      <span className="text-white font-medium">Setiap Jumat, 2 Minggu 1x</span>
+                </div>
+                
+                {/* Title and Description */}
+                <div>
+                  <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                    Program mentoring yang dirancang untuk membantu setiap individu bertumbuh dalam kedewasaan rohani dan karakter Kristus.
+                  </p>
+                </div>
+
+                {/* Desktop Layout */}
+                <div className="grid lg:grid-cols-2 gap-12">
+                  <div className="space-y-6">
+                    <div className="space-y-4">
+                      <div className="flex items-center py-3 px-4 rounded-lg hover:bg-gray-800/30 transition-colors">
+                        <div className="w-2 h-2 bg-orange-400 rounded-full mr-4 flex-shrink-0"></div>
+                        <span className="text-white font-medium">Setiap Jumat, 2 Minggu 1x</span>
+                      </div>
+                      <div className="flex items-center py-3 px-4 rounded-lg hover:bg-gray-800/30 transition-colors">
+                        <div className="w-2 h-2 bg-orange-400 rounded-full mr-4 flex-shrink-0"></div>
+                        <span className="text-white font-medium">Hybrid Onsite</span>
+                      </div>
+                      <div className="flex items-center py-3 px-4 rounded-lg hover:bg-gray-800/30 transition-colors">
+                        <div className="w-2 h-2 bg-orange-400 rounded-full mr-4 flex-shrink-0"></div>
+                        <span className="text-white font-medium">Online Via Zoom</span>
+                      </div>
                     </div>
-                    <div className="flex items-center py-3 px-4 rounded-lg hover:bg-gray-800/30 transition-colors">
-                      <div className="w-2 h-2 bg-orange-400 rounded-full mr-4 flex-shrink-0"></div>
-                      <span className="text-white font-medium">Hybrid Onsite</span>
-                    </div>
-                    <div className="flex items-center py-3 px-4 rounded-lg hover:bg-gray-800/30 transition-colors">
-                      <div className="w-2 h-2 bg-orange-400 rounded-full mr-4 flex-shrink-0"></div>
-                      <span className="text-white font-medium">Online Via Zoom</span>
+
+                    <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/30">
+                       <div className="flex items-center mb-4">
+                          <svg className="w-8 h-8 mr-3" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100" height="100" rx="20" fill="#4A90E2"/>
+                            <rect x="20" y="35" width="35" height="25" rx="5" fill="white"/>
+                            <path d="M60 35L75 25V65L60 55V35Z" fill="white"/>
+                          </svg>
+                          <h4 className="text-xl font-semibold text-yellow-400">Informasi Zoom</h4>
+                        </div>
+                      <div className="space-y-3">
+                        <div className="flex justify-between items-center">
+                          <span className="text-gray-300">Meeting ID:</span>
+                          <span className="text-white font-mono bg-orange-400/10 px-3 py-2 rounded-lg">493 382 3121</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-gray-300">Passcode:</span>
+                          <span className="text-white font-mono bg-orange-400/10 px-3 py-2 rounded-lg">125881</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/30">
-                     <div className="flex items-center mb-4">
-                        <svg className="w-8 h-8 mr-3" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <rect width="100" height="100" rx="20" fill="#4A90E2"/>
-                          <rect x="20" y="35" width="35" height="25" rx="5" fill="white"/>
-                          <path d="M60 35L75 25V65L60 55V35Z" fill="white"/>
-                        </svg>
-                        <h4 className="text-xl font-semibold text-yellow-400">Informasi Zoom</h4>
-                      </div>
-                    <div className="space-y-3">
-                      <div className="flex justify-between items-center">
-                        <span className="text-gray-300">Meeting ID:</span>
-                        <span className="text-white font-mono bg-orange-400/10 px-3 py-2 rounded-lg">493 382 3121</span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-gray-300">Passcode:</span>
-                        <span className="text-white font-mono bg-orange-400/10 px-3 py-2 rounded-lg">125881</span>
-                      </div>
+                  {/* Desktop Image - Only shows on large screens */}
+                  <div className="hidden lg:flex flex-col justify-center">
+                    <div className="w-full h-64 bg-gradient-to-br from-gray-700/50 to-gray-600/50 rounded-xl overflow-hidden mb-8 border border-gray-600/30">
+                      <img 
+                        src="https://res.cloudinary.com/da8szcqqk/image/upload/v1756798841/Welcome_Sign_Presentation_xjayxq.jpg" 
+                        alt="Growth In Christ Mentoring Program" 
+                        className="w-full h-full object-cover object-center"
+                      />
                     </div>
+                    <blockquote className="text-gray-300 text-center text-lg italic leading-relaxed border-l-4 border-yellow-400 pl-6">
+                      &ldquo;Bertumbuh bersama dalam kasih Kristus melalui mentoring yang terarah dan penuh kasih&rdquo;
+                    </blockquote>
                   </div>
                 </div>
 
-                <div className="flex flex-col justify-center">
-                  <div className="w-full h-64 bg-gradient-to-br from-gray-700/50 to-gray-600/50 rounded-xl flex items-center justify-center mb-8 border border-gray-600/30">
-                    <div className="text-center">
-                      <span className="text-white text-2xl font-bold block mb-2">Growth In Christ</span>
-                      <span className="text-gray-300 text-lg">Mentoring Program</span>
-                    </div>
-                  </div>
+                {/* Mobile Quote - Shows at bottom on small screens */}
+                <div className="lg:hidden">
                   <blockquote className="text-gray-300 text-center text-lg italic leading-relaxed border-l-4 border-yellow-400 pl-6">
                     &ldquo;Bertumbuh bersama dalam kasih Kristus melalui mentoring yang terarah dan penuh kasih&rdquo;
                   </blockquote>
@@ -131,17 +174,45 @@ export default function KomunitasPage() {
               </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="w-full h-32 bg-gradient-to-br from-gray-700/50 to-gray-600/50 rounded-xl hover:from-gray-600/50 hover:to-gray-500/50 transition-all duration-300 flex items-center justify-center border border-gray-600/30 shadow-lg">
-                <span className="text-white font-medium">Fellowship</span>
+              <div className="w-full h-32 bg-gradient-to-br from-gray-700/50 to-gray-600/50 rounded-xl hover:from-gray-600/50 hover:to-gray-500/50 transition-all duration-300 border border-gray-600/30 shadow-lg overflow-hidden relative">
+                <img 
+                  src="https://res.cloudinary.com/da8szcqqk/image/upload/v1756797234/1G9A9798_sxogdg.jpg" 
+                  alt="Growth" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                  <span className="text-white font-medium text-lg">Fellowship</span>
+                </div>
               </div>
-              <div className="w-full h-32 bg-gradient-to-br from-gray-700/50 to-gray-600/50 rounded-xl hover:from-gray-600/50 hover:to-gray-500/50 transition-all duration-300 flex items-center justify-center border border-gray-600/30 shadow-lg">
-                <span className="text-white font-medium">Worship</span>
+              <div className="w-full h-32 bg-gradient-to-br from-gray-700/50 to-gray-600/50 rounded-xl hover:from-gray-600/50 hover:to-gray-500/50 transition-all duration-300 border border-gray-600/30 shadow-lg overflow-hidden relative">
+                <img 
+                  src="https://res.cloudinary.com/da8szcqqk/image/upload/v1756800492/1G9A7228_nwaegq.jpg" 
+                  alt="Growth" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                  <span className="text-white font-medium text-lg">Worship</span>
+                </div>
               </div>
-              <div className="w-full h-32 bg-gradient-to-br from-gray-700/50 to-gray-600/50 rounded-xl hover:from-gray-600/50 hover:to-gray-500/50 transition-all duration-300 flex items-center justify-center border border-gray-600/30 shadow-lg">
-                <span className="text-white font-medium">Growth</span>
+              <div className="w-full h-32 bg-gradient-to-br from-gray-700/50 to-gray-600/50 rounded-xl hover:from-gray-600/50 hover:to-gray-500/50 transition-all duration-300 border border-gray-600/30 shadow-lg overflow-hidden relative">
+                <img 
+                  src="https://res.cloudinary.com/da8szcqqk/image/upload/v1756797234/1G9A9815_h6umll.jpg" 
+                  alt="Growth" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                  <span className="text-white font-medium text-lg">Growth</span>
+                </div>
               </div>
-              <div className="w-full h-32 bg-gradient-to-br from-gray-700/50 to-gray-600/50 rounded-xl hover:from-gray-600/50 hover:to-gray-500/50 transition-all duration-300 flex items-center justify-center border border-gray-600/30 shadow-lg">
-                <span className="text-white font-medium">Service</span>
+              <div className="w-full h-32 bg-gradient-to-br from-gray-700/50 to-gray-600/50 rounded-xl hover:from-gray-600/50 hover:to-gray-500/50 transition-all duration-300 border border-gray-600/30 shadow-lg overflow-hidden relative">
+                <img 
+                  src="https://res.cloudinary.com/da8szcqqk/image/upload/v1756800492/1G9A9493_zbnvdp.jpg" 
+                  alt="Growth" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                  <span className="text-white font-medium text-lg">Service</span>
+                </div>
               </div>
             </div>
           </div>

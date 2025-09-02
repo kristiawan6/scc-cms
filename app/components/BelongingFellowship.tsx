@@ -63,28 +63,25 @@ export default function BelongingFellowship() {
   // Fellowship photos with actual images
   const fellowshipImages = [
     {
-      src: "https://images.pexels.com/photos/8468704/pexels-photo-8468704.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      alt: "Community Worship"
+      src: "https://res.cloudinary.com/da8szcqqk/image/upload/v1756797235/1G9A9840_vubk24.jpg"
     },
     {
-      src: "https://images.pexels.com/photos/7551659/pexels-photo-7551659.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      alt: "Youth Fellowship"
+      src: "https://res.cloudinary.com/da8szcqqk/image/upload/v1756797234/1G9A9197_q5x82m.jpg"
     },
     {
-      src: "https://images.pexels.com/photos/8468705/pexels-photo-8468705.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      alt: "Family Gathering"
+      src: "https://res.cloudinary.com/da8szcqqk/image/upload/v1756797234/1G9A9798_sxogdg.jpg"
     },
     {
-      src: "https://images.pexels.com/photos/7551658/pexels-photo-7551658.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      alt: "Prayer Circle"
+      src: "https://res.cloudinary.com/da8szcqqk/image/upload/v1756797234/1G9A9815_h6umll.jpg"
     },
     {
-      src: "https://images.pexels.com/photos/8468703/pexels-photo-8468703.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      alt: "Community Service"
+      src: "https://res.cloudinary.com/da8szcqqk/image/upload/v1756797233/1G9A2113_rvq3tf.jpg"
     },
     {
-      src: "https://images.pexels.com/photos/7551660/pexels-photo-7551660.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      alt: "Bible Study"
+      src: "https://res.cloudinary.com/da8szcqqk/image/upload/v1756797233/1G9A9692_fqlujg.jpg"
+    },
+    {
+      src: "https://res.cloudinary.com/da8szcqqk/image/upload/v1756797233/1G9A9662_g4l9m5.jpg"
     }
   ];
 
@@ -126,15 +123,15 @@ export default function BelongingFellowship() {
                     <div className="relative w-full h-64 rounded-lg overflow-hidden shadow-lg">
                       <Image 
                         src={image.src} 
-                        alt={image.alt}
+                        alt=""
                         width={400}
                         height={256}
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                       <div className="absolute bottom-0 left-0 right-0 p-4">
-                        <h3 className="text-white font-semibold text-lg mb-1">{image.alt}</h3>
-                        <p className="text-gray-200 text-sm">Moments of faith and fellowship</p>
+                        <h3 className="text-white font-semibold text-lg mb-1"></h3>
+                        <p className="text-gray-200 text-sm"></p>
                       </div>
                     </div>
                   </div>
@@ -187,15 +184,15 @@ export default function BelongingFellowship() {
                   <div className="relative w-72 h-48 rounded-lg overflow-hidden shadow-lg transform transition-all duration-300 group-hover:scale-105">
                     <Image 
                       src={image.src} 
-                      alt={image.alt}
+                      alt=""
                       width={288}
                       height={192}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                      <h3 className="text-white font-semibold text-lg mb-1">{image.alt}</h3>
-                      <p className="text-gray-200 text-sm">Moments of faith and fellowship</p>
+                      <h3 className="text-white font-semibold text-lg mb-1"></h3>
+                      <p className="text-gray-200 text-sm"></p>
                     </div>
                     <div className="absolute inset-0 rounded-lg border border-transparent group-hover:border-pink-400/30 transition-all duration-300" />
                   </div>

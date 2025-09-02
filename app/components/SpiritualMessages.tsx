@@ -51,17 +51,17 @@ export default function SpiritualMessages() {
   ];
 
   return (
-    <section className="relative py-16 sm:py-24 bg-black">
+    <section className="relative py-16 sm:py-24 bg-black" id="spiritual-messages" aria-labelledby="messages-heading">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
+        <header className="text-center mb-16">
+          <h2 id="messages-heading" className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
             5 Pesan Tuhan Dalam{' '}
             <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
               Pelayanan Rohani
             </span>
           </h2>
-        </div>
+        </header>
 
         {/* Messages List */}
         <div className="max-w-4xl mx-auto">
@@ -69,23 +69,46 @@ export default function SpiritualMessages() {
             <div key={index} className="mb-4">
               <div 
                 onClick={() => setSelectedMessage(selectedMessage === index ? null : index)}
-                className="flex items-center justify-between py-6 border-b border-gray-700 hover:bg-gray-900 transition-colors duration-300 px-6 rounded-lg cursor-pointer"
+                className="py-6 border-b border-gray-700 hover:bg-gray-900 transition-colors duration-300 px-6 rounded-lg cursor-pointer"
               >
-                <div className="flex items-center space-x-4">
-                  {/* Number */}
-                  <div className="w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-white font-bold text-sm">{index + 1}</span>
+                {/* Mobile Layout */}
+                <div className="block sm:hidden">
+                  <div className="flex items-center space-x-4 mb-2">
+                    {/* Number */}
+                    <div className="w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white font-bold text-sm">{index + 1}</span>
+                    </div>
+                    
+                    {/* Title */}
+                    <h3 className="text-lg font-bold text-white">
+                      {message.title}
+                    </h3>
                   </div>
                   
-                  {/* Title */}
-                  <h3 className="text-xl font-bold text-white">
-                    {message.title}
-                  </h3>
+                  {/* Bible Verse - Mobile */}
+                  <div className="text-gray-400 text-sm font-medium ml-12">
+                    {message.verse}
+                  </div>
                 </div>
-                
-                {/* Bible Verse */}
-                <div className="text-gray-400 text-sm font-medium">
-                  {message.verse}
+
+                {/* Desktop Layout */}
+                <div className="hidden sm:flex items-center justify-between">
+                  <div className="flex items-center space-x-4">
+                    {/* Number */}
+                    <div className="w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white font-bold text-sm">{index + 1}</span>
+                    </div>
+                    
+                    {/* Title */}
+                    <h3 className="text-xl font-bold text-white">
+                      {message.title}
+                    </h3>
+                  </div>
+                  
+                  {/* Bible Verse - Desktop */}
+                  <div className="text-gray-400 text-sm font-medium">
+                    {message.verse}
+                  </div>
                 </div>
               </div>
               
