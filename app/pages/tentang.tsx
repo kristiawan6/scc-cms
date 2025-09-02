@@ -31,7 +31,7 @@ export default function TentangPage() {
               <div>
                 <h3 className="text-2xl font-bold mb-6 text-yellow-400">Kepemimpinan</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  GBI SCC Merupakan bagian dari GBI Rayon 1i yang digembalai oleh <span className="font-semibold text-white">Pdt. Herron Dollf Anton, S.E., M.M</span> dan berada dalam naungan GBI Gatot Subroto yang digembalai oleh <span className="font-semibold text-white">Pdt. DR. Ir. Niko Njotorahardjo</span>.
+                  GBI SCC Merupakan bagian dari GBI Rayon 1i yang digembalai oleh <span className="font-semibold text-white">Pdt. Herron Dollf Anton, S.E., M.M</span> dengan <span className="font-semibold text-white">Pdt. Danny Setiawan </span> sebagai wakil gembala dan berada dalam naungan GBI Gatot Subroto yang digembalai oleh <span className="font-semibold text-white">Pdt. DR. Ir. Niko Njotorahardjo</span>.
                 </p>
               </div>
 

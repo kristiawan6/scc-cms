@@ -1,0 +1,49 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#000000"/>
+  
+  <!-- Gradient overlay -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FCD34D;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#F97316;stop-opacity:0.1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#gradient)"/>
+  
+  <!-- Main content -->
+  <g transform="translate(100, 150)">
+    <!-- Church icon -->
+    <g transform="translate(0, 0)">
+      <path d="M50 80 L50 20 L70 20 L70 80 M30 80 L90 80 M40 60 L80 60 M40 40 L80 40" stroke="#FCD34D" stroke-width="3" fill="none"/>
+      <circle cx="60" cy="10" r="5" fill="#FCD34D"/>
+    </g>
+    
+    <!-- Main title -->
+    <text x="150" y="40" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#FFFFFF">
+      GBI Soho City Church
+    </text>
+    
+    <!-- Subtitle -->
+    <text x="150" y="80" font-family="Arial, sans-serif" font-size="24" fill="#FCD34D">
+      Welcome Home - Jakarta
+    </text>
+    
+    <!-- Tagline -->
+    <text x="150" y="120" font-family="Arial, sans-serif" font-size="18" fill="#D1D5DB">
+      See what God can do through you
+    </text>
+    
+    <!-- Service info -->
+    <g transform="translate(150, 160)">
+      <text x="0" y="0" font-family="Arial, sans-serif" font-size="16" fill="#FFFFFF">Ibadah Minggu:</text>
+      <text x="0" y="25" font-family="Arial, sans-serif" font-size="14" fill="#D1D5DB">10:00 WIB & 16:30 WIB</text>
+      <text x="0" y="50" font-family="Arial, sans-serif" font-size="14" fill="#D1D5DB">SOHO Pancoran, Jakarta Selatan</text>
+    </g>
+  </g>
+  
+  <!-- Decorative elements -->
+  <circle cx="1050" cy="100" r="30" fill="#FCD34D" opacity="0.2"/>
+  <circle cx="1100" cy="200" r="20" fill="#F97316" opacity="0.3"/>
+  <circle cx="150" cy="500" r="25" fill="#FCD34D" opacity="0.2"/>
+</svg>
