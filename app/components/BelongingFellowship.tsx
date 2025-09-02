@@ -1,11 +1,14 @@
 'use client';
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
+import ImageModal from './ImageModal';
 
 export default function BelongingFellowship() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isManualControl, setIsManualControl] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalImageIndex, setModalImageIndex] = useState(0);
   const sliderRef = useRef<HTMLDivElement>(null);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
@@ -60,10 +63,19 @@ export default function BelongingFellowship() {
     setIsManualControl(true);
     setTimeout(() => setIsManualControl(false), 5000);
   };
+
+  const openModal = (index: number) => {
+    setModalImageIndex(index);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   // Fellowship photos with actual images
   const fellowshipImages = [
     {
-      src: "https://res.cloudinary.com/da8szcqqk/image/upload/v1756797235/1G9A9840_vubk24.jpg"
+      src: "https://res.cloudinary.com/da8szcqqk/image/upload/v1756803072/1G9A9744_e7tjrw.jpg"
     },
     {
       src: "https://res.cloudinary.com/da8szcqqk/image/upload/v1756797234/1G9A9197_q5x82m.jpg"
@@ -120,7 +132,10 @@ export default function BelongingFellowship() {
               >
                 {fellowshipImages.map((image, index) => (
                   <div key={index} className="w-full flex-shrink-0">
-                    <div className="relative w-full h-64 rounded-lg overflow-hidden shadow-lg">
+                    <div 
+                      className="relative w-full h-64 rounded-lg overflow-hidden shadow-lg cursor-pointer"
+                      onClick={() => openModal(index)}
+                    >
                       <Image 
                         src={image.src} 
                         alt=""
@@ -132,6 +147,12 @@ export default function BelongingFellowship() {
                       <div className="absolute bottom-0 left-0 right-0 p-4">
                         <h3 className="text-white font-semibold text-lg mb-1"></h3>
                         <p className="text-gray-200 text-sm"></p>
+                      </div>
+                      {/* Click indicator */}
+                      <div className="absolute top-4 right-4 bg-black/50 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
                       </div>
                     </div>
                   </div>
@@ -180,6 +201,7 @@ export default function BelongingFellowship() {
                 <div 
                   key={index}
                   className="flex-shrink-0 mx-3 group cursor-pointer"
+                  onClick={() => openModal(index % fellowshipImages.length)}
                 >
                   <div className="relative w-72 h-48 rounded-lg overflow-hidden shadow-lg transform transition-all duration-300 group-hover:scale-105">
                     <Image 
@@ -195,6 +217,12 @@ export default function BelongingFellowship() {
                       <p className="text-gray-200 text-sm"></p>
                     </div>
                     <div className="absolute inset-0 rounded-lg border border-transparent group-hover:border-pink-400/30 transition-all duration-300" />
+                    {/* Click indicator */}
+                    <div className="absolute top-4 right-4 bg-black/50 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -202,6 +230,14 @@ export default function BelongingFellowship() {
           </div>
         )}
       </div>
+      
+      {/* Image Modal */}
+      <ImageModal
+        images={fellowshipImages.map(img => ({ src: img.src, alt: "Fellowship moment" }))}
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        initialIndex={modalImageIndex}
+      />
     </section>
   );
 }

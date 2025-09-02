@@ -1,7 +1,45 @@
+'use client';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import ImageModal from '../components/ImageModal';
+import { useState } from 'react';
 
 export default function KomunitasPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalImageIndex, setModalImageIndex] = useState(0);
+
+  const joyfulImages = [
+    {
+      src: "https://res.cloudinary.com/da8szcqqk/image/upload/v1756797234/1G9A9798_sxogdg.jpg",
+      alt: "Fellowship",
+      title: "Fellowship"
+    },
+    {
+      src: "https://res.cloudinary.com/da8szcqqk/image/upload/v1756800492/1G9A7228_nwaegq.jpg",
+      alt: "Worship",
+      title: "Worship"
+    },
+    {
+      src: "https://res.cloudinary.com/da8szcqqk/image/upload/v1756797234/1G9A9815_h6umll.jpg",
+      alt: "Growth",
+      title: "Growth"
+    },
+    {
+      src: "https://res.cloudinary.com/da8szcqqk/image/upload/v1756800492/1G9A9493_zbnvdp.jpg",
+      alt: "Service",
+      title: "Service"
+    }
+  ];
+
+  const openModal = (index: number) => {
+    setModalImageIndex(index);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="min-h-screen bg-black">
       <Navigation />
@@ -168,56 +206,46 @@ export default function KomunitasPage() {
           {/* Community Gallery */}
           <div className="mb-16">
             <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-yellow-400 mb-4">Our Best Moments</h3>
+              <h3 className="text-2xl font-bold text-yellow-400 mb-4">Joyful Highlights</h3>
               <p className="text-gray-300 text-lg max-w-2xl mx-auto">
                 Precious moments in the journey of faith
               </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="w-full h-32 bg-gradient-to-br from-gray-700/50 to-gray-600/50 rounded-xl hover:from-gray-600/50 hover:to-gray-500/50 transition-all duration-300 border border-gray-600/30 shadow-lg overflow-hidden relative">
-                <img 
-                  src="https://res.cloudinary.com/da8szcqqk/image/upload/v1756797234/1G9A9798_sxogdg.jpg" 
-                  alt="Growth" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                  <span className="text-white font-medium text-lg">Fellowship</span>
+              {joyfulImages.map((image, index) => (
+                <div 
+                  key={index}
+                  className="w-full h-32 bg-gradient-to-br from-gray-700/50 to-gray-600/50 rounded-xl hover:from-gray-600/50 hover:to-gray-500/50 transition-all duration-300 border border-gray-600/30 shadow-lg overflow-hidden relative cursor-pointer group"
+                  onClick={() => openModal(index)}
+                >
+                  <img 
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                    <span className="text-white font-medium text-lg">{image.title}</span>
+                  </div>
+                  {/* Click indicator */}
+                  <div className="absolute top-2 right-2 bg-black/50 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                  </div>
                 </div>
-              </div>
-              <div className="w-full h-32 bg-gradient-to-br from-gray-700/50 to-gray-600/50 rounded-xl hover:from-gray-600/50 hover:to-gray-500/50 transition-all duration-300 border border-gray-600/30 shadow-lg overflow-hidden relative">
-                <img 
-                  src="https://res.cloudinary.com/da8szcqqk/image/upload/v1756800492/1G9A7228_nwaegq.jpg" 
-                  alt="Growth" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                  <span className="text-white font-medium text-lg">Worship</span>
-                </div>
-              </div>
-              <div className="w-full h-32 bg-gradient-to-br from-gray-700/50 to-gray-600/50 rounded-xl hover:from-gray-600/50 hover:to-gray-500/50 transition-all duration-300 border border-gray-600/30 shadow-lg overflow-hidden relative">
-                <img 
-                  src="https://res.cloudinary.com/da8szcqqk/image/upload/v1756797234/1G9A9815_h6umll.jpg" 
-                  alt="Growth" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                  <span className="text-white font-medium text-lg">Growth</span>
-                </div>
-              </div>
-              <div className="w-full h-32 bg-gradient-to-br from-gray-700/50 to-gray-600/50 rounded-xl hover:from-gray-600/50 hover:to-gray-500/50 transition-all duration-300 border border-gray-600/30 shadow-lg overflow-hidden relative">
-                <img 
-                  src="https://res.cloudinary.com/da8szcqqk/image/upload/v1756800492/1G9A9493_zbnvdp.jpg" 
-                  alt="Growth" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                  <span className="text-white font-medium text-lg">Service</span>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
       </main>
+      
+      {/* Image Modal */}
+      <ImageModal
+        images={joyfulImages}
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        initialIndex={modalImageIndex}
+      />
       
       <Footer />
     </div>
