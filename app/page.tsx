@@ -1,6 +1,5 @@
 "use client";
 
-
 import Navigation from "./components/Navigation";
 import { useState, useEffect } from "react";
 import Hero from "./components/Hero";
@@ -9,6 +8,7 @@ import SpiritualMessages from "./components/SpiritualMessages";
 import BelongingFellowship from "./components/BelongingFellowship";
 import dynamic from "next/dynamic";
 import { Instagram } from "lucide-react";
+import Head from "next/head";
 
 const Footer = dynamic(() => import("./components/Footer"), { ssr: false });
 
@@ -31,7 +31,12 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   return (
-    <div className="min-h-screen relative bg-gradient-to-br from-gray-900 via-black to-gray-900 overflow-hidden">
+    <>
+      <Head>
+        <link rel="canonical" href="https://gbiscc.org/" />
+        <meta name="robots" content="index, follow" />
+      </Head>
+      <div className="min-h-screen relative bg-gradient-to-br from-gray-900 via-black to-gray-900 overflow-hidden">
       {/* Global Animated Background Elements */}
       <div className="fixed inset-0 opacity-10 pointer-events-none">
         <div className="absolute -top-32 -left-32 w-96 h-96 bg-gradient-to-r from-yellow-400/10 to-orange-500/10 rounded-full blur-[120px] animate-pulse" />
@@ -98,5 +103,6 @@ export default function Home() {
         <Footer />
       </div>
     </div>
+    </>
   );
 }
