@@ -3,11 +3,15 @@ export async function GET() {
     `User-agent: *
 Allow: /
 Disallow: /private/
+Disallow: /api/
+Disallow: /_next/
 
-Sitemap: https://gbiscc.org/sitemap.xml`,
+# Sitemaps
+Sitemap: https://gbiscc.org/sitemap.xml
+Sitemap: https://gbiscc.org/sitemap_index.xml`,
     {
       headers: {
-        'Content-Type': 'text/plain',
+        'Content-Type': 'text/plain; charset=utf-8',
       },
     }
   )
