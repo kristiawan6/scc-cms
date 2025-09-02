@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Soho City Church - Welcome Home | GBI SCC Jakarta",
+    default: "Soho City Church - Welcome Home | GBI SCC ",
     template: "%s | Soho City Church"
   },
   description: "See what God can do through you. Join GBI Soho City Church Jakarta for worship, fellowship, and spiritual growth. Find your place in God's family through our vibrant community and life-changing services.",
@@ -27,14 +27,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://sohocitychurch.com'),
+  metadataBase: new URL('https://gbiscc.org'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: "Soho City Church - Welcome Home | GBI SCC Jakarta",
     description: "See what God can do through you. Join GBI Soho City Church Jakarta for worship, fellowship, and spiritual growth. Find your place in God's family.",
-    url: 'https://sohocitychurch.com',
+    url: 'https://gbiscc.org',
     siteName: 'Soho City Church',
     locale: 'id_ID',
     type: 'website',
@@ -93,9 +93,9 @@ export default function RootLayout({
               "name": "GBI Soho City Church",
               "alternateName": "Soho City Church",
               "description": "See what God can do through you. Join GBI Soho City Church Jakarta for worship, fellowship, and spiritual growth.",
-              "url": "https://sohocitychurch.com",
-              "logo": "https://sohocitychurch.com/scc-logo.svg",
-              "image": "https://sohocitychurch.com/og-image.jpg",
+              "url": "https://gbiscc.org",
+              "logo": "https://gbiscc.org/scc-logo.svg",
+              "image": "https://gbiscc.org/og-image.jpg",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Jakarta",
@@ -114,7 +114,7 @@ export default function RootLayout({
                 "@type": "ReserveAction",
                 "target": {
                   "@type": "EntryPoint",
-                  "urlTemplate": "https://sohocitychurch.com/jadwal-ibadah"
+                  "urlTemplate": "https://gbiscc.org/jadwal-ibadah"
                 },
                 "result": {
                   "@type": "Reservation",

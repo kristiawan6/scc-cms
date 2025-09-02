@@ -96,6 +96,7 @@ export default function Footer() {
                 <p className="ml-2">• Ibadah Raya 1: 10:00 WIB</p>
                 <p className="ml-2">• Ibadah Raya 2: 16:30 WIB</p>
                 <p className="ml-2">• Sekolah Minggu: 10:00 WIB</p>
+                <p className="ml-2">• Junior Church : 13:30 WIB</p>
                 <p className="mt-2"><span className="font-medium text-white">Rabu:</span></p>
                 <p className="ml-2">• Worship Night: 19:00 WIB</p>
                 <p className="mt-2"><span className="font-medium text-white">Sabtu:</span></p>
