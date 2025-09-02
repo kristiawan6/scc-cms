@@ -130,11 +130,11 @@ export default function KomunitasPage() {
                       <div className="space-y-3">
                         <div className="flex justify-between items-center">
                           <span className="text-gray-300">Meeting ID:</span>
-                          <span className="text-white font-mono bg-orange-400/10 px-3 py-2 rounded-lg">493 382 3121</span>
+                          <span className="text-white font-mono bg-orange-400/10 px-3 py-2 rounded-lg">834 5516 9450</span>
                         </div>
                         <div className="flex justify-between items-center">
                           <span className="text-gray-300">Passcode:</span>
-                          <span className="text-white font-mono bg-orange-400/10 px-3 py-2 rounded-lg">125881</span>
+                          <span className="text-white font-mono bg-orange-400/10 px-3 py-2 rounded-lg">GIC</span>
                         </div>
                       </div>
                     </div>
