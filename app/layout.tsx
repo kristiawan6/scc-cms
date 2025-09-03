@@ -67,6 +67,9 @@ export const metadata: Metadata = {
   verification: {
     google: 'google-site-verification=your-actual-verification-code',
   },
+  other: {
+    'sitemap': 'https://gbiscc.org/sitemap_index.xml',
+  },
 };
 
 export default function RootLayout({
@@ -89,6 +92,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
+        <link rel="sitemap" type="application/xml" href="/sitemap_index.xml" />
         
 
         <script
