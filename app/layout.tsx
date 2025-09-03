@@ -70,6 +70,15 @@ export const metadata: Metadata = {
   other: {
     'sitemap': 'https://gbiscc.org/sitemap_index.xml',
   },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/scc-logo.svg',
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: '/scc-logo.svg',
+    },
+  },
 };
 
 export default function RootLayout({
@@ -90,7 +99,7 @@ export default function RootLayout({
         <meta name="business.address" content="Gedung SOHO Pancoran LT.UG, Jl. Letjen M.T. Haryono No.Kav. 2, Tebet Bar., Kec. Pancoran, Kota Jakarta Selatan, DKI Jakarta 12810" />
         <meta name="business.phone" content="+62-21-xxxx-xxxx" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" href="/scc-logo.svg" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="sitemap" type="application/xml" href="/sitemap_index.xml" />
         
