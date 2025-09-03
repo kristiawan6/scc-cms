@@ -22,7 +22,6 @@ export default function Home() {
         const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
         const scrollPosition = window.scrollY;
         
-        // Show icons when scrolled past hero section
         setShowSocialIcons(scrollPosition > heroBottom - 100);
       }
     };
