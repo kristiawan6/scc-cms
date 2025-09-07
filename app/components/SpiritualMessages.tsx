@@ -61,6 +61,9 @@ export default function SpiritualMessages() {
               Pelayanan Rohani
             </span>
           </h2>
+          <p className="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
+            💡 <span className="text-yellow-400 font-medium">Tip:</span> Klik pada setiap pesan untuk melihat ayat Alkitab yang terkait
+          </p>
         </header>
 
         {/* Messages List */}

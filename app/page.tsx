@@ -7,13 +7,59 @@ import TogetherInFaith from "./components/TogetherInFaith";
 import SpiritualMessages from "./components/SpiritualMessages";
 import BelongingFellowship from "./components/BelongingFellowship";
 import dynamic from "next/dynamic";
-import { Instagram } from "lucide-react";
+import { Instagram, BookOpen } from "lucide-react";
 import Head from "next/head";
 
 const Footer = dynamic(() => import("./components/Footer"), { ssr: false });
 
 export default function Home() {
   const [showSocialIcons, setShowSocialIcons] = useState(false);
+  const [showInstagramDropdown, setShowInstagramDropdown] = useState(false);
+  const [showBibleVerse, setShowBibleVerse] = useState(false);
+  const [currentVerse, setCurrentVerse] = useState({ text: '', reference: '' });
+
+  // Bible verses collection
+  const bibleVerses = [
+    {
+      text: "Karena Aku ini mengetahui rancangan-rancangan apa yang ada pada-Ku mengenai kamu, demikianlah firman TUHAN, yaitu rancangan damai sejahtera dan bukan rancangan kecelakaan, untuk memberikan kepadamu hari depan yang penuh harapan.",
+      reference: "Yeremia 29:11"
+    },
+    {
+      text: "Tetapi orang-orang yang menanti-nantikan TUHAN mendapat kekuatan baru: mereka seumpama rajawali yang naik terbang dengan kekuatan sayapnya; mereka berlari dan tidak menjadi lesu, mereka berjalan dan tidak menjadi lelah.",
+      reference: "Yesaya 40:31"
+    },
+    {
+      text: "Segala perkara dapat kutanggung di dalam Dia yang memberi kekuatan kepadaku.",
+      reference: "Filipi 4:13"
+    },
+    {
+      text: "Janganlah hendaknya kamu kuatir tentang apa pun juga, tetapi nyatakanlah dalam segala hal keinginanmu kepada Allah dalam doa dan permohonan dengan ucapan syukur.",
+      reference: "Filipi 4:6"
+    },
+    {
+      text: "Karena Allah sangat mengasihi dunia ini, sehingga Ia telah mengaruniakan Anak-Nya yang tunggal, supaya setiap orang yang percaya kepada-Nya tidak binasa, melainkan beroleh hidup yang kekal.",
+      reference: "Yohanes 3:16"
+    },
+    {
+      text: "Marilah kepada-Ku, semua yang letih lesu dan berbeban berat, Aku akan memberi kelegaan kepadamu.",
+      reference: "Matius 11:28"
+    },
+    {
+      text: "TUHAN adalah gembalaku, takkan kekurangan aku.",
+      reference: "Mazmur 23:1"
+    },
+    {
+      text: "Percayalah kepada TUHAN dengan segenap hatimu, dan janganlah bersandar kepada pengertianmu sendiri.",
+      reference: "Amsal 3:5"
+    }
+  ];
+
+  // Function to get random Bible verse
+  const getRandomVerse = () => {
+    const randomIndex = Math.floor(Math.random() * bibleVerses.length);
+    setCurrentVerse(bibleVerses[randomIndex]);
+    setShowBibleVerse(true);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,6 +75,45 @@ export default function Home() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Close Instagram dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (showInstagramDropdown && !target.closest('.instagram-dropdown-container')) {
+        setShowInstagramDropdown(false);
+      }
+    };
+
+    if (showInstagramDropdown) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showInstagramDropdown]);
+
+  // Handle Bible verse modal keyboard events
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && showBibleVerse) {
+        setShowBibleVerse(false);
+      }
+    };
+
+    if (showBibleVerse) {
+      document.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'unset';
+    };
+  }, [showBibleVerse]);
   return (
     <>
       <Head>
@@ -48,17 +133,78 @@ export default function Home() {
       {/* Floating Social Media Icons */}
         <div className={`fixed right-4 sm:right-8 top-1/2 transform -translate-y-1/2 z-50 flex flex-col space-y-3 sm:space-y-4 transition-all duration-500 ${showSocialIcons ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-16 pointer-events-none'}`}>
         {/* Instagram */}
-        <a 
-          href="https://www.instagram.com/soho.citychurch/" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="group relative w-10 h-10 sm:w-14 sm:h-14 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
-        >
-          <Instagram className="w-5 h-5 sm:w-7 sm:h-7 text-white" />
-          <div className="absolute -left-20 top-1/2 transform -translate-y-1/2 bg-black/80 text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-            Follow us on Instagram
-          </div>
-        </a>
+        <div className="relative instagram-dropdown-container">
+          <button 
+            onClick={() => setShowInstagramDropdown(!showInstagramDropdown)}
+            className="group relative w-10 h-10 sm:w-14 sm:h-14 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+          >
+            <Instagram className="w-5 h-5 sm:w-7 sm:h-7 text-white" />
+            <div className="absolute -left-20 top-1/2 transform -translate-y-1/2 bg-black/80 text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+              Follow us on Instagram
+            </div>
+          </button>
+          
+          {/* Instagram Dropdown */}
+          {showInstagramDropdown && (
+            <div className="absolute right-16 top-0 bg-black/90 backdrop-blur-sm rounded-lg shadow-xl border border-gray-700/50 p-4 min-w-[250px] z-50">
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="text-white font-semibold text-sm">Follow Our Instagram</h3>
+                <button 
+                  onClick={() => setShowInstagramDropdown(false)}
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              <div className="space-y-2">
+                <a 
+                  href="https://www.instagram.com/soho.citychurch/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-800/50 transition-colors group"
+                >
+                  <div className="w-8 h-8 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 rounded-full flex items-center justify-center">
+                    <Instagram className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-white text-sm font-medium">@soho.citychurch</p>
+                    <p className="text-gray-400 text-xs">Main Church Account</p>
+                  </div>
+                </a>
+                <a 
+                  href="https://www.instagram.com/jc.soho/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-800/50 transition-colors group"
+                >
+                  <div className="w-8 h-8 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 rounded-full flex items-center justify-center">
+                    <Instagram className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-white text-sm font-medium">@jc.soho</p>
+                    <p className="text-gray-400 text-xs">Junior Church</p>
+                  </div>
+                </a>
+                <a 
+                  href="https://www.instagram.com/creativedancerofblessed/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-800/50 transition-colors group"
+                >
+                  <div className="w-8 h-8 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 rounded-full flex items-center justify-center">
+                    <Instagram className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-white text-sm font-medium">@creativedancerofblessed</p>
+                    <p className="text-gray-400 text-xs">Creative Dance Ministry</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          )}
+        </div>
         
         {/* YouTube */}
         <a 
@@ -89,8 +235,67 @@ export default function Home() {
             Follow us on TikTok
           </div>
         </a>
+        
+        {/* Bible Verse */}
+        <button 
+          onClick={getRandomVerse}
+          className="group relative w-10 h-10 sm:w-14 sm:h-14 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+        >
+          <BookOpen className="w-5 h-5 sm:w-7 sm:h-7 text-white" />
+          <div className="absolute -left-20 top-1/2 transform -translate-y-1/2 bg-black/80 text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+            Daily Bible Verse
+          </div>
+        </button>
       </div>
-      
+        
+        {/* Bible Verse Modal */}
+        {showBibleVerse && (
+          <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
+            <div className="bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-sm rounded-2xl p-8 max-w-2xl w-full mx-4 border border-gray-700/50 shadow-2xl">
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-full flex items-center justify-center">
+                    <BookOpen className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-yellow-400">Firman Tuhan Hari Ini</h3>
+                </div>
+                <button 
+                  onClick={() => setShowBibleVerse(false)}
+                  className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-gray-800/50 rounded-full"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              
+              <div className="text-center">
+                <blockquote className="text-lg sm:text-xl text-gray-200 leading-relaxed mb-6 italic">
+                  &ldquo;{currentVerse.text}&rdquo;
+                </blockquote>
+                <cite className="text-yellow-400 font-semibold text-lg">
+                  - {currentVerse.reference}
+                </cite>
+              </div>
+              
+              <div className="flex justify-center space-x-4 mt-8">
+                <button 
+                  onClick={getRandomVerse}
+                  className="bg-gradient-to-r from-yellow-500 to-orange-600 hover:from-yellow-600 hover:to-orange-700 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 shadow-lg"
+                >
+                  Ayat Lainnya
+                </button>
+                <button 
+                  onClick={() => setShowBibleVerse(false)}
+                  className="bg-gray-700/50 hover:bg-gray-600/50 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 border border-gray-600/50"
+                >
+                  Tutup
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+        
       <div className="relative z-10">
         <Navigation />
         <div id="hero-section">

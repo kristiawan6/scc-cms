@@ -9,12 +9,12 @@ export async function GET() {
       changefreq: 'weekly',
       priority: '1.0'
     },
-    {
-      url: `${baseUrl}/tentang`,
-      lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: '0.8'
-    },
+    // {
+    //   url: `${baseUrl}/tentang`,
+    //   lastmod: currentDate,
+    //   changefreq: 'monthly',
+    //   priority: '0.8'
+    // },
     {
       url: `${baseUrl}/jadwal-ibadah`,
       lastmod: currentDate,
