@@ -1,7 +1,7 @@
 'use client';
-import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 import ImageModal from './ImageModal';
+import { assetFromCloudinary } from '@/lib/utils';
 
 export default function BelongingFellowship() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -74,27 +74,14 @@ export default function BelongingFellowship() {
   };
   // Fellowship photos with actual images
   const fellowshipImages = [
-    {
-      src: "https://res.cloudinary.com/da8szcqqk/image/upload/v1756803072/1G9A9744_e7tjrw.jpg"
-    },
-    {
-      src: "https://res.cloudinary.com/da8szcqqk/image/upload/v1756797234/1G9A9197_q5x82m.jpg"
-    },
-    {
-      src: "https://res.cloudinary.com/da8szcqqk/image/upload/v1756797234/1G9A9798_sxogdg.jpg"
-    },
-    {
-      src: "https://res.cloudinary.com/da8szcqqk/image/upload/v1756797234/1G9A9815_h6umll.jpg"
-    },
-    {
-      src: "https://res.cloudinary.com/da8szcqqk/image/upload/v1756797233/1G9A2113_rvq3tf.jpg"
-    },
-    {
-      src: "https://res.cloudinary.com/da8szcqqk/image/upload/v1756797233/1G9A9692_fqlujg.jpg"
-    },
-    {
-      src: "https://res.cloudinary.com/da8szcqqk/image/upload/v1756797233/1G9A9662_g4l9m5.jpg"
-    }
+    { src: "https://scc-storage.b-cdn.net/1G9A9815.jpg" },
+    { src: "https://scc-storage.b-cdn.net/1G9A9798.jpg" },
+    { src: "https://scc-storage.b-cdn.net/1G9A9493.jpg" },
+    { src: "https://scc-storage.b-cdn.net/1G9A9744.jpg" },
+    { src: "https://scc-storage.b-cdn.net/1G9A2113.jpg" },
+    { src: "https://scc-storage.b-cdn.net/1G9A9662.jpg" },
+    { src: "https://scc-storage.b-cdn.net/1G9A9229.jpg" },
+    { src: "https://scc-storage.b-cdn.net/1G9A9840.jpg" }
   ];
 
   // Duplicate images for seamless infinite scroll
@@ -136,11 +123,9 @@ export default function BelongingFellowship() {
                       className="relative w-full h-64 rounded-lg overflow-hidden shadow-lg cursor-pointer"
                       onClick={() => openModal(index)}
                     >
-                      <Image 
+                      <img 
                         src={image.src} 
                         alt=""
-                        width={400}
-                        height={256}
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
@@ -204,11 +189,9 @@ export default function BelongingFellowship() {
                   onClick={() => openModal(index % fellowshipImages.length)}
                 >
                   <div className="relative w-72 h-48 rounded-lg overflow-hidden shadow-lg transform transition-all duration-300 group-hover:scale-105">
-                    <Image 
+                    <img 
                       src={image.src} 
                       alt=""
-                      width={288}
-                      height={192}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

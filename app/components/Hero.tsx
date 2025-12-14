@@ -1,10 +1,12 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { assetFromCloudinary } from '@/lib/utils';
 
 export default function Hero() {
   const [currentText, setCurrentText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
   
   useEffect(() => {
     const texts = ['your heart', 'your life', 'your family'];
@@ -30,6 +32,13 @@ export default function Hero() {
     
     return () => clearTimeout(timeout);
   }, [currentText, currentIndex, isDeleting]);
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = true;
+    v.play().catch(() => {});
+  }, []);
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Optimized Video Background with Poster */}
@@ -39,8 +48,10 @@ export default function Hero() {
          muted
          loop
          playsInline
+         preload="auto"
+         ref={videoRef}
        >
-         <source src="https://res.cloudinary.com/da8szcqqk/video/upload/v1755942369/scc-hero_d7sfo0.mp4" type="video/mp4" />
+         <source src="https://scc-storage.b-cdn.net/scc-hero.mp4" type="video/mp4" />
       </video>
       
       {/* Background overlay */}

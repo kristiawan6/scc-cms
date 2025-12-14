@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import SnowfallOverlay from "./components/SnowfallOverlay";
+import AnnouncementBar from "./components/AnnouncementBar";
+import StringLightsOverlay from "./components/StringLightsOverlay";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -148,7 +151,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <AnnouncementBar />
         {children}
+        <SnowfallOverlay />
+        <StringLightsOverlay />
       </body>
     </html>
   );

@@ -1,5 +1,6 @@
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import { Gift, Sparkles, CalendarClock, TreePine } from 'lucide-react';
 
 export default function JadwalIbadahPage() {
   return (
@@ -17,6 +18,72 @@ export default function JadwalIbadahPage() {
               Bergabunglah dengan kami dalam setiap momen ibadah dan persekutuan yang penuh berkat
             </p>
           </div>
+
+          {/* Seasonal Notices */}
+          <section aria-labelledby="seasonal-notices" className="mb-12">
+            <h2 id="seasonal-notices" className="sr-only">Pengumuman Natal & Awal Tahun</h2>
+            <div className="relative overflow-hidden bg-gradient-to-br from-gray-900/80 to-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 shadow-2xl">
+              <div className="absolute -top-24 -left-24 w-64 h-64 bg-gradient-to-tr from-yellow-400/10 to-orange-500/10 rounded-full blur-[80px]" />
+              <div className="absolute -bottom-20 -right-20 w-72 h-72 bg-gradient-to-tr from-orange-500/10 to-yellow-400/10 rounded-full blur-[90px]" />
+
+              {/* Ornaments removed per request */}
+
+              <div className="mb-4 flex items-center gap-2 relative z-20">
+                <Sparkles className="w-5 h-5 text-yellow-400" />
+                <span className="text-sm font-semibold text-yellow-400 uppercase tracking-wider">Jadwal Ibadah Natal dan Tahun Baru</span>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-6">
+                {/* Perayaan Natal Bersama */}
+                <div className="space-y-3 bg-white/5 border border-gray-700/50 rounded-xl p-4 hover:border-yellow-400/30 transition-colors min-h-[160px]">
+                  <div className="flex items-center gap-2">
+                    <Gift className="w-5 h-5 text-yellow-400" />
+                    <p className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent font-bold">Perayaan Natal Bersama Bapak Gembala Rayon II</p>
+                  </div>
+                  <p className="text-white font-medium">Ps. Herron Dollf Anton, S.E., M.M.</p>
+                  <div className="flex items-center justify-between text-gray-300">
+                    <div className="flex items-center gap-2">
+                      <CalendarClock className="w-4 h-4 text-orange-400" />
+                      <span>Minggu, 21 Desember 2025</span>
+                    </div>
+                    <span className="text-orange-400 bg-orange-400/10 px-2 py-0.5 rounded">10.00 WIB</span>
+                  </div>
+                  <p className="text-gray-400">Disertai Perjamuan Kudus</p>
+                </div>
+
+                {/* Ibadah Natal 25 Desember */}
+                <div className="space-y-3 bg-white/5 border border-gray-700/50 rounded-xl p-4 hover:border-yellow-400/30 transition-colors min-h-[160px]">
+                  <div className="flex items-center gap-2">
+                    <Gift className="w-5 h-5 text-yellow-400" />
+                    <p className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent font-bold">Ibadah Natal 25 Desember</p>
+                  </div>
+                  <div className="flex items-center justify-between text-gray-300">
+                    <div className="flex items-center gap-2">
+                      <CalendarClock className="w-4 h-4 text-orange-400" />
+                      <span>Kamis, 25 Desember 2025</span>
+                    </div>
+                    <span className="text-orange-400 bg-orange-400/10 px-2 py-0.5 rounded">10.00 WIB</span>
+                  </div>
+                </div>
+
+                {/* Awal Tahun - Ibadah Buka Tahun */}
+                <div className="space-y-3 bg-white/5 border border-gray-700/50 rounded-xl p-4 hover:border-yellow-400/30 transition-colors min-h-[160px]">
+                  <div className="flex items-center gap-2">
+                    <Sparkles className="w-5 h-5 text-yellow-400" />
+                    <p className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent font-bold">Awal Tahun: Ibadah Buka Tahun 2026</p>
+                  </div>
+                  <div className="flex items-center justify-between text-gray-300">
+                    <div className="flex items-center gap-2">
+                      <CalendarClock className="w-4 h-4 text-orange-400" />
+                      <span>Kamis, 1 Januari 2026</span>
+                    </div>
+                    <span className="text-orange-400 bg-orange-400/10 px-2 py-0.5 rounded">10.00 WIB</span>
+                  </div>
+                  <p className="text-gray-400">Disertai Perjamuan Kudus</p>
+                </div>
+              </div>
+            </div>
+          </section>
 
           {/* Schedule Grid */}
           <div className="grid gap-8 md:gap-10">

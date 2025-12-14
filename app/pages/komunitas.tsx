@@ -3,6 +3,7 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import ImageModal from '../components/ImageModal';
 import { useState } from 'react';
+// import { assetFromCloudinary } from '@/lib/utils';
 
 export default function KomunitasPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -10,22 +11,22 @@ export default function KomunitasPage() {
 
   const joyfulImages = [
     {
-      src: "https://res.cloudinary.com/da8szcqqk/image/upload/v1756797234/1G9A9798_sxogdg.jpg",
+      src: "https://scc-storage.b-cdn.net/1G9A2113.jpg",
       alt: "Fellowship",
       title: "Fellowship"
     },
     {
-      src: "https://res.cloudinary.com/da8szcqqk/image/upload/v1756800492/1G9A7228_nwaegq.jpg",
+      src: "https://scc-storage.b-cdn.net/1G9A9744.jpg",
       alt: "Worship",
       title: "Worship"
     },
     {
-      src: "https://res.cloudinary.com/da8szcqqk/image/upload/v1756797234/1G9A9815_h6umll.jpg",
+      src: "https://scc-storage.b-cdn.net/1G9A9815.jpg",
       alt: "Growth",
       title: "Growth"
     },
     {
-      src: "https://res.cloudinary.com/da8szcqqk/image/upload/v1756800492/1G9A9493_zbnvdp.jpg",
+      src: "https://scc-storage.b-cdn.net/1G9A9493.jpg",
       alt: "Service",
       title: "Service"
     }
@@ -66,7 +67,7 @@ export default function KomunitasPage() {
                 </div>
                 <div className="bg-white rounded-lg p-2">
                   <img 
-                    src="https://res.cloudinary.com/da8szcqqk/image/upload/v1756800788/Logo_Cool_qnm6l3.png" 
+                    src="https://scc-storage.b-cdn.net/Logo_Cool.png" 
                     alt="COOL Logo" 
                     className="h-12 w-auto object-contain"
                   />
@@ -80,7 +81,7 @@ export default function KomunitasPage() {
                   <h3 className="text-xl font-semibold text-white mb-4">Cool Dewasa</h3>
                   <div className="w-full h-64 rounded-lg mb-6 overflow-hidden">
                     <img 
-                      src="https://res.cloudinary.com/da8szcqqk/image/upload/v1756800647/WhatsApp_Image_2025-09-02_at_15.03.22_jsljde.jpg" 
+                      src="https://scc-storage.b-cdn.net/WhatsApp%20Image%202025-09-02%20at%2015.03.22.jpeg" 
                       alt="Cool Dewasa" 
                       className="w-full h-full object-cover"
                     />
@@ -95,7 +96,7 @@ export default function KomunitasPage() {
                   <h3 className="text-xl font-semibold text-white mb-4">Cool Dewasa Muda (Youth)</h3>
                   <div className="w-full h-64 rounded-lg mb-6 overflow-hidden">
                     <img 
-                      src="https://res.cloudinary.com/da8szcqqk/image/upload/v1756798756/WhatsApp_Image_2025-04-25_at_18.31.43_vnzdmh.jpg" 
+                      src="https://scc-storage.b-cdn.net/WhatsApp%20Image%202025-04-25%20at%2018.31.43.jpeg" 
                       alt="Cool Dewasa Muda (Youth)" 
                       className="w-full h-full object-cover"
                     />
@@ -121,15 +122,15 @@ export default function KomunitasPage() {
                   <h3 className="text-2xl font-bold text-white mb-4">Growth In Christ</h3>
                 </div>
                 {/* Mobile/Tablet Image - Shows below title on small screens */}
-                <div className="lg:hidden">
+                {/* <div className="lg:hidden">
                   <div className="w-full aspect-video bg-gradient-to-br from-gray-700/50 to-gray-600/50 rounded-xl overflow-hidden border border-gray-600/30">
                     <img 
-                      src="https://res.cloudinary.com/da8szcqqk/image/upload/v1756798841/Welcome_Sign_Presentation_xjayxq.jpg" 
+                      src={assetFromCloudinary("https://res.cloudinary.com/da8szcqqk/image/upload/v1756798841/Welcome_Sign_Presentation_xjayxq.jpg")} 
                       alt="Growth In Christ Mentoring Program" 
                       className="w-full h-full object-cover object-center"
                     />
                   </div>
-                </div>
+                </div> */}
                 
                 {/* Title and Description */}
                 <div>
@@ -180,13 +181,6 @@ export default function KomunitasPage() {
 
                   {/* Desktop Image - Only shows on large screens */}
                   <div className="hidden lg:flex flex-col justify-center">
-                    <div className="w-full h-64 bg-gradient-to-br from-gray-700/50 to-gray-600/50 rounded-xl overflow-hidden mb-8 border border-gray-600/30">
-                      <img 
-                        src="https://res.cloudinary.com/da8szcqqk/image/upload/v1756798841/Welcome_Sign_Presentation_xjayxq.jpg" 
-                        alt="Growth In Christ Mentoring Program" 
-                        className="w-full h-full object-cover object-center"
-                      />
-                    </div>
                     <blockquote className="text-gray-300 text-center text-lg italic leading-relaxed border-l-4 border-yellow-400 pl-6">
                       &ldquo;Bertumbuh bersama dalam kasih Kristus melalui mentoring yang terarah dan penuh kasih&rdquo;
                     </blockquote>

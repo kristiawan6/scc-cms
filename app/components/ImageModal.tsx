@@ -1,6 +1,5 @@
 'use client';
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 
 interface ImageModalProps {
   images: { src: string; alt?: string; title?: string }[];
@@ -94,13 +93,10 @@ export default function ImageModal({ images, isOpen, onClose, initialIndex }: Im
       {/* Main image container */}
       <div className="relative max-w-7xl max-h-[90vh] mx-4">
         <div className="relative">
-          <Image
+          <img
             src={images[currentIndex].src}
             alt={images[currentIndex].alt || `Image ${currentIndex + 1}`}
-            width={1200}
-            height={800}
             className="max-w-full max-h-[80vh] object-contain rounded-lg"
-            priority
           />
           
           {/* Image title/caption */}
@@ -132,11 +128,9 @@ export default function ImageModal({ images, isOpen, onClose, initialIndex }: Im
                   : 'border-gray-500 hover:border-gray-300'
               }`}
             >
-              <Image
+              <img
                 src={image.src}
                 alt={image.alt || `Thumbnail ${index + 1}`}
-                width={64}
-                height={64}
                 className="w-full h-full object-cover"
               />
             </button>
