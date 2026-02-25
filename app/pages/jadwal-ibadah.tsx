@@ -1,6 +1,6 @@
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import { Gift, Sparkles, CalendarClock, TreePine, Home, Moon } from 'lucide-react';
+import { Gift, Sparkles, CalendarClock, TreePine, Home, Moon, Cross } from 'lucide-react';
 
 export default function JadwalIbadahPage() {
   return (
@@ -35,7 +35,7 @@ export default function JadwalIbadahPage() {
 
               <div className="grid md:grid-cols-3 gap-6">
                 {/* Ibadaha Raya */}
-                <div className="space-y-3 bg-white/5 border border-gray-700/50 rounded-xl p-4 hover:border-yellow-400/30 transition-colors min-h-[160px]">
+                {/* <div className="space-y-3 bg-white/5 border border-gray-700/50 rounded-xl p-4 hover:border-yellow-400/30 transition-colors min-h-[160px]">
                   <div className="flex items-center gap-2">
                     <Home className="w-5 h-5 text-yellow-400" />
                     <p className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent font-bold">IBADAH RAYA 1 & 2</p>
@@ -48,16 +48,8 @@ export default function JadwalIbadahPage() {
                     </div>
                     <span className="text-orange-400 bg-orange-400/10 px-2 py-0.5 rounded">10.00 WIB</span>
                   </div>
-                  {/* <p className="text-gray-400">Disertai Perjamuan Kudus</p> */}
-                  <p className="text-white font-medium">Ps. Danny Setiawan</p>
-                  <div className="flex items-center justify-between text-gray-300">
-                    <div className="flex items-center gap-2">
-                      <CalendarClock className="w-4 h-4 text-orange-400" />
-                      <span>Minggu, 22 Februari 2026</span>
-                    </div>
-                    <span className="text-orange-400 bg-orange-400/10 px-2 py-0.5 rounded">16.30 WIB</span>
-                  </div>
-                </div>
+                  <p className="text-gray-400">Disertai Perjamuan Kudus</p>
+                </div> */}
 
                 {/* Worship Night */}
                 <div className="space-y-3 bg-white/5 border border-gray-700/50 rounded-xl p-4 hover:border-yellow-400/30 transition-colors min-h-[160px]">
@@ -75,8 +67,24 @@ export default function JadwalIbadahPage() {
                   </div>
                 </div>
 
-                {/* Junior Curch */}
+                {/* Growth In Christ */}
                 <div className="space-y-3 bg-white/5 border border-gray-700/50 rounded-xl p-4 hover:border-yellow-400/30 transition-colors min-h-[160px]">
+                  <div className="flex items-center gap-2">
+                    <Cross className="w-5 h-5 text-yellow-400" />
+                    <p className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent font-bold">GROWTH IN CHRIST</p>
+                  </div>
+                  <p className="text-white font-medium">Ps. Danny Setiawan</p>
+                  <div className="flex items-center justify-between text-gray-300">
+                    <div className="flex items-center gap-2">
+                      <CalendarClock className="w-4 h-4 text-orange-400" />
+                      <span>Jumat, 27 Februari 2026</span>
+                    </div>
+                    <span className="text-orange-400 bg-orange-400/10 px-2 py-0.5 rounded">20.00 WIB</span>
+                  </div>
+                </div>
+
+                {/* Junior Curch */}
+                {/* <div className="space-y-3 bg-white/5 border border-gray-700/50 rounded-xl p-4 hover:border-yellow-400/30 transition-colors min-h-[160px]">
                   <div className="flex items-center gap-2">
                     <Sparkles className="w-5 h-5 text-yellow-400" />
                     <p className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent font-bold">Junior Church</p>
@@ -88,8 +96,8 @@ export default function JadwalIbadahPage() {
                     </div>
                     <span className="text-orange-400 bg-orange-400/10 px-2 py-0.5 rounded">13.30 WIB</span>
                   </div>
-                  {/* <p className="text-gray-400">Disertai Perjamuan Kudus</p> */}
-                </div>
+                  <p className="text-gray-400">Disertai Perjamuan Kudus</p>
+                </div> */}
               </div>
             </div>
           </section>
