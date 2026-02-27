@@ -34,39 +34,6 @@ export default function JadwalIbadahPage() {
               </div>
 
               <div className="grid md:grid-cols-3 gap-6">
-                {/* Ibadaha Raya */}
-                {/* <div className="space-y-3 bg-white/5 border border-gray-700/50 rounded-xl p-4 hover:border-yellow-400/30 transition-colors min-h-[160px]">
-                  <div className="flex items-center gap-2">
-                    <Home className="w-5 h-5 text-yellow-400" />
-                    <p className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent font-bold">IBADAH RAYA 1 & 2</p>
-                  </div>
-                  <p className="text-white font-medium">Ps. Samuel Pristiantoro</p>
-                  <div className="flex items-center justify-between text-gray-300">
-                    <div className="flex items-center gap-2">
-                      <CalendarClock className="w-4 h-4 text-orange-400" />
-                      <span>Minggu, 22 February 2026</span>
-                    </div>
-                    <span className="text-orange-400 bg-orange-400/10 px-2 py-0.5 rounded">10.00 WIB</span>
-                  </div>
-                  <p className="text-gray-400">Disertai Perjamuan Kudus</p>
-                </div> */}
-
-                {/* Worship Night */}
-                <div className="space-y-3 bg-white/5 border border-gray-700/50 rounded-xl p-4 hover:border-yellow-400/30 transition-colors min-h-[160px]">
-                  <div className="flex items-center gap-2">
-                    <Moon className="w-5 h-5 text-yellow-400" />
-                    <p className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent font-bold">WORSHIP NIGHT</p>
-                  </div>
-                  <p className="text-white font-medium">Ps. Danny Setiawan</p>
-                  <div className="flex items-center justify-between text-gray-300">
-                    <div className="flex items-center gap-2">
-                      <CalendarClock className="w-4 h-4 text-orange-400" />
-                      <span>Rabu, 25 Februari 2026</span>
-                    </div>
-                    <span className="text-orange-400 bg-orange-400/10 px-2 py-0.5 rounded">19.00 WIB</span>
-                  </div>
-                </div>
-
                 {/* Growth In Christ */}
                 <div className="space-y-3 bg-white/5 border border-gray-700/50 rounded-xl p-4 hover:border-yellow-400/30 transition-colors min-h-[160px]">
                   <div className="flex items-center gap-2">
@@ -82,6 +49,55 @@ export default function JadwalIbadahPage() {
                     <span className="text-orange-400 bg-orange-400/10 px-2 py-0.5 rounded">20.00 WIB</span>
                   </div>
                 </div>
+
+                {/* Ibadaha Raya */}
+                <div className="space-y-3 bg-white/5 border border-gray-700/50 rounded-xl p-4 hover:border-yellow-400/30 transition-colors min-h-[160px]">
+                  <div className="flex items-center gap-2">
+                    <Home className="w-5 h-5 text-yellow-400" />
+                    <p className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent font-bold">IBADAH RAYA 1 & 2</p>
+                  </div>
+                  <p className="text-white font-medium">Ps. Danny Setiawan</p>
+                  <div className="flex items-center justify-between text-gray-300">
+                    <div className="flex items-center gap-2">
+                      <CalendarClock className="w-4 h-4 text-orange-400" />
+                      <span>Minggu, 1 Maret 2026</span>
+                    </div>
+                    <span className="text-orange-400 bg-orange-400/10 px-2 py-0.5 rounded">10.00 WIB</span>
+                  </div>
+                  {/* <p className="text-gray-400">Disertai Perjamuan Kudus</p> */}
+                </div>
+
+                <div className="space-y-3 bg-white/5 border border-gray-700/50 rounded-xl p-4 hover:border-yellow-400/30 transition-colors min-h-[160px]">
+                  <div className="flex items-center gap-2">
+                    <Home className="w-5 h-5 text-yellow-400" />
+                    <p className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent font-bold">IBADAH RAYA 1 & 2</p>
+                  </div>
+                  <p className="text-white font-medium">Ps. Danny Setiawan</p>
+                  <div className="flex items-center justify-between text-gray-300">
+                    <div className="flex items-center gap-2">
+                      <CalendarClock className="w-4 h-4 text-orange-400" />
+                      <span>Minggu, 1 Maret 2026</span>
+                    </div>
+                    <span className="text-orange-400 bg-orange-400/10 px-2 py-0.5 rounded">16.30 WIB</span>
+                  </div>
+                  {/* <p className="text-gray-400">Disertai Perjamuan Kudus</p> */}
+                </div>
+
+                {/* Worship Night */}
+                {/* <div className="space-y-3 bg-white/5 border border-gray-700/50 rounded-xl p-4 hover:border-yellow-400/30 transition-colors min-h-[160px]">
+                  <div className="flex items-center gap-2">
+                    <Moon className="w-5 h-5 text-yellow-400" />
+                    <p className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent font-bold">WORSHIP NIGHT</p>
+                  </div>
+                  <p className="text-white font-medium">Ps. Danny Setiawan</p>
+                  <div className="flex items-center justify-between text-gray-300">
+                    <div className="flex items-center gap-2">
+                      <CalendarClock className="w-4 h-4 text-orange-400" />
+                      <span>Rabu, 25 Februari 2026</span>
+                    </div>
+                    <span className="text-orange-400 bg-orange-400/10 px-2 py-0.5 rounded">19.00 WIB</span>
+                  </div>
+                </div> */}
 
                 {/* Junior Curch */}
                 {/* <div className="space-y-3 bg-white/5 border border-gray-700/50 rounded-xl p-4 hover:border-yellow-400/30 transition-colors min-h-[160px]">
